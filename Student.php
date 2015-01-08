@@ -7,9 +7,9 @@
  */
 
 /**
- * Description of Student
+ * A Student class that holds and allows modification of information
  *
- * @author justin
+ * @author Justin Chee
  */
 class Student {
     
@@ -20,14 +20,17 @@ class Student {
         $this->grades = array();
     }
     
+    // Add an email address
     function add_email($which, $address) {
         $this->emails[$which] = $address;
     }
     
+    // Add a grade
     function add_grade($grade) {
         $this->grades[] = $grade;
     }
     
+    // Calculate the grade average
     function average() {
         $total = 0;
         foreach ($this->grades as $value)
@@ -36,6 +39,7 @@ class Student {
         return $total / count($this->grades);
     }
     
+    // Print out all information regarding student.
     function toString() {
         $result = $this->first_name . "" . $this->surname;
         $result .= " (" . $this->average() . ")\n";
